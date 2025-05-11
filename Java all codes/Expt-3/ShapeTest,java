@@ -1,0 +1,39 @@
+abstract class Shape {
+    double dim1, dim2;
+
+    Shape(double a, double b) {
+        dim1 = a;
+        dim2 = b;
+    }
+
+    abstract double area();
+}
+
+class Rectangle extends Shape {
+    Rectangle(double a, double b) {
+        super(a, b);
+    }
+
+    double area() {
+        return dim1 * dim2;
+    }
+}
+
+class Triangle extends Shape {
+    Triangle(double a, double b) {
+        super(a, b);
+    }
+
+    double area() {
+        return 0.5 * dim1 * dim2;
+    }
+}
+
+public class ShapeTest {
+    public static void main(String[] args) {
+        Shape r = new Rectangle(10, 5);
+        Shape t = new Triangle(10, 5);
+        System.out.println("Rectangle area: " + r.area());
+        System.out.println("Triangle area: " + t.area());
+    }
+}
